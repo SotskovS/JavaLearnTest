@@ -34,26 +34,33 @@ public class Roman {
 		if (dec == 10) {
 			res += RomanSign.values()[11];
 		} else if (dec >= 9 && dec < 10 ) {
-			res += RomanSign.values()[9];
-			res += RomanSign.values()[11];
+			res += RomanSign.values()[9]; 
+			res += RomanSign.values()[11]; 
 		} else if (dec >= 5) {
 			res += RomanSign.values()[10];
+		} else if (dec == 4) {
+			res += RomanSign.values()[10];
+			res += RomanSign.values()[9];
 		}
 		
-		if (dec > 5 && dec < 9) {
+		if (dec < 4) {
+			for (int i = 0; i < dec; i++) {
+				res += RomanSign.values()[9];
+ 			}
+		} else if (dec > 5 && dec < 9) {
 			for (int i = 0; i < (dec - 5); i++) {
 				res += RomanSign.values()[9];
-			}
+ 			}
 		}
 		
-		if (remainder >= 9) {
-			res += RomanSign.values()[0];
+		if (remainder >= 9) {			
+			res += RomanSign.values()[0]; 
 			res += RomanSign.values()[9];
 		} else if (remainder >= 5) {
-			res += RomanSign.values()[4];
+			res += RomanSign.values()[4]; 
 			
 			for (int i = 0; i < (remainder - 5); i++) {
-				res += RomanSign.values()[0];
+				res += RomanSign.values()[0]; 
 			}			
 		} else if (remainder > 3 && remainder < 5) { 
 			res += RomanSign.values()[0];

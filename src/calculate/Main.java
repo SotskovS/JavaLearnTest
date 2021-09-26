@@ -49,6 +49,6 @@ public class Main {
 		} else {
 			int printResult = Arabic.calc(Integer.parseInt(array[0]), array[1], Integer.parseInt(array[2]), romanCalculateFlag);
 			System.out.println(printResult);
-		}	
+		}		
 	}
 }
